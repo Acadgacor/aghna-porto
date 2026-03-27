@@ -1,0 +1,65 @@
+{
+    "navigation": {
+        "home": "Home",
+        "resume": "Resume",
+        "contact": "Contact"
+    },
+    "home": {
+        "name": "Aghna Ghalie Aminudin",
+        "title": "Founder & Marketing Representative",
+        "tagline": "Prioritizing 'Focus' and 'Speed development' as the keys to success.",
+        "shortStory": "I am an individual who holds the principle that focus and speed of development are the keys to success in managing activities, both personal and organizational. Experienced in leadership aspects since childhood makes me always enthusiastic to develop myself to have a positive impact. Known as a person with an assertive, solution-oriented, enterprising, and conventional character, I am committed to implementing skills for the progress of the surrounding community and creating integrity for the nation and state.",
+        "focusAreas": [
+            {
+                "title": "Leadership & Organization",
+                "description": "Experienced in leading teams and organizations, from the Student Executive Board to building a company, with expertise in decision making and critical analysis.",
+                "iconName": "Users"
+            },
+            {
+                "title": "Business & Marketing",
+                "description": "Having a track record in negotiation, strategic planning, and success in closing work contracts with investors and various large institutions.",
+                "iconName": "TrendingUp"
+            }
+        ]
+    },
+    "resume": {
+        "title": "Experience",
+        "experiences": [
+            {
+                "id": 1,
+                "position": "Founder",
+                "institution": "Beaulytics",
+                "duration": "March 2025 - Present",
+                "description": "Successfully led the team in designing the company's operational strategy divided into three phases (phase one progress reached 50%). Secured a work contract with investors amounting to 30% of the company's development budget plan."
+            },
+            {
+                "id": 2,
+                "position": "Marketing Representative",
+                "institution": "CV Mitra Saraa Media",
+                "duration": "September 2022 - Present",
+                "description": "Representing the company in promoting and selling products/services in the field of Garment Specialist. Successfully closed work contracts with several institutions, including the production of alma mater jackets for UIN Sultan Syarif Kasim Riau."
+            },
+            {
+                "id": 3,
+                "position": "President / Chairman",
+                "institution": "Student Executive Board / OSIS",
+                "duration": "September 2023 - September 2024",
+                "description": "Led 68 Student Executive Board (BEM/OSIS) members in carrying out work programs that successfully increased student involvement by more than 55%. Managed more than 10 school programs, including annual events and student training."
+            },
+            {
+                "id": 4,
+                "position": "Murobbi Halaqah BPI",
+                "institution": "Sekolah Pembinaan SMAIT Assyifa Wanareja",
+                "duration": "September 2024 - Present",
+                "description": "Guiding mutarabbi in understanding Islamic values and building character. Active in monthly Islamic propagation (dakwah) to the surrounding community through various religious activities."
+            }
+        ]
+    },
+    "contact": {
+        "title": "Contact Me",
+        "email": "Email",
+        "whatsapp": "WhatsApp",
+        "linkedin": "LinkedIn",
+        "message": "Let's connect and collaborate!"
+    }
+}

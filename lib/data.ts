@@ -1,8 +1,21 @@
 export const personalInfo = {
     name: "Aghna Ghalie Aminudin",
-    tagline: "Law Undergraduate & Founder of Beaulytics",
-    description:
-        "A passionate law undergraduate with a strong foundation in legal studies and a drive for entrepreneurship. As the Founder of Beaulytics and an active member in organizations like DPM and HIPMI, I combine analytical thinking with leadership and innovation to create meaningful impact.",
+    title: "Founder & Marketing Representative",
+    tagline: "Mengedepankan 'Fokus' dan 'Speed development' sebagai kunci kesuksesan.",
+    imageUrl: "/portrait-aghna.jpg", // Sesuaikan dengan path foto Anda
+    shortStory: "Saya merupakan pribadi yang memiliki prinsip bahwa fokus dan kecepatan perkembangan adalah kunci kesuksesan dalam pengelolaan kegiatan, baik pribadi maupun organisasi. Berpengalaman pada aspek kepemimpinan sejak kecil membuat saya selalu semangat untuk mengembangkan diri agar berdampak positif. Dikenal sebagai pribadi yang berkarakter asertif, solutif, enterprising, dan konvensional, saya berkomitmen untuk mengimplementasikan keterampilan demi kemajuan masyarakat sekitar dan menciptakan integritas bagi bangsa dan negara.",
+    focusAreas: [
+        {
+            title: "Kepemimpinan & Organisasi",
+            description: "Berpengalaman memimpin tim dan organisasi, mulai dari Badan Eksekutif Murid hingga membangun perusahaan, dengan keahlian dalam pengambilan keputusan dan analisis kritis.",
+            iconName: "Users" // Anda bisa mengubah icon sesuai library yang digunakan (misal: Lucide React)
+        },
+        {
+            title: "Bisnis & Pemasaran",
+            description: "Memiliki rekam jejak dalam negosiasi, perencanaan strategis, serta keberhasilan menutup kontrak kerja dengan investor dan berbagai institusi besar.",
+            iconName: "TrendingUp"
+        }
+    ]
 };
 
 export const experiences = [
@@ -10,42 +23,50 @@ export const experiences = [
         id: 1,
         position: "Founder",
         institution: "Beaulytics",
-        duration: "2023 - Present",
+        duration: "Maret 2025 - Present",
         description:
-            "Founded and currently leading Beaulytics. Responsible for overseeing strategic planning, managing the core team, and driving overall business growth and innovation.",
+            "Berhasil memimpin tim dalam merancang strategi berjalannya perusahaan yang terbagi menjadi tiga fase (progres fase satu mencapai 50%). Mengamankan kontrak kerja dengan investor sebesar 30% dari rancangan anggaran biaya perkembangan perusahaan.",
     },
     {
         id: 2,
-        position: "Member / Role Placeholder",
-        institution: "HIPMI (Himpunan Pengusaha Muda Indonesia)",
-        duration: "2022 - Present",
+        position: "Marketing Representatif",
+        institution: "CV Mitra Saraa Media",
+        duration: "September 2022 - Present",
         description:
-            "Actively involved in networking, entrepreneurial skill development, and collaborating on organizational events to empower and foster young entrepreneurs.",
+            "Mewakili perusahaan dalam mempromosikan dan menjual produk/layanan di bidang Garment Specialist. Berhasil menutup kontrak kerja dengan beberapa institusi, termasuk pengerjaan almamater untuk UIN Sultan Syarif Kasim Riau.",
     },
     {
         id: 3,
-        position: "Legislative Member / Role Placeholder",
-        institution: "DPM (Dewan Perwakilan Mahasiswa)",
-        duration: "2021 - 2022",
+        position: "Presiden / Ketua",
+        institution: "Badan Eksekutif Murid / OSIS",
+        duration: "September 2023 - September 2024",
         description:
-            "Served in the student legislative body. Responsible for drafting student regulations, advocating for student rights, and overseeing the executive student board.",
+            "Memimpin 68 anggota BEM/OSIS dalam menjalankan program kerja yang berhasil meningkatkan keterlibatan siswa hingga lebih dari 55%. Mengelola lebih dari 10 program sekolah, termasuk acara tahunan dan pelatihan siswa.",
     },
+    {
+        id: 4,
+        position: "Murobbi Halaqah BPI",
+        institution: "Sekolah Pembinaan SMAIT Assyifa Wanareja",
+        duration: "September 2024 - Present",
+        description:
+            "Mendampingi mutarabbi dalam memahami nilai-nilai Islami dan membangun karakter. Aktif dalam dakwah Islamiyah bulanan kepada masyarakat sekitar melalui berbagai aktivitas keagamaan.",
+    }
 ];
 
 export const socialLinks = [
     {
         platform: "Email",
-        url: "mailto:hello@example.com",
+        url: "mailto:aghnaghalie@gmail.com",
         label: "Email",
     },
     {
-        platform: "LinkedIn",
-        url: "https://www.linkedin.com/in/placeholder",
-        label: "LinkedIn",
+        platform: "WhatsApp",
+        url: "https://wa.me/6281319244558",
+        label: "WhatsApp",
     },
     {
-        platform: "Instagram",
-        url: "https://www.instagram.com/placeholder",
-        label: "Instagram",
+        platform: "LinkedIn",
+        url: "https://www.linkedin.com/in/placeholder", // Ganti dengan URL asli jika ada
+        label: "LinkedIn",
     },
 ];

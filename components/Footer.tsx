@@ -22,7 +22,7 @@ export default function Footer() {
 
                 {/* Copyright text */}
                 <p className="text-sm font-light font-serif tracking-widest text-cream/70">
-                    &copy; 2026 Fauqa Thuuril Aqli
+                    &copy; 2026 Aghna Ghalie Aminudin
                 </p>
             </div>
         </footer>

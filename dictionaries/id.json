@@ -1,0 +1,65 @@
+{
+    "navigation": {
+        "home": "Beranda",
+        "resume": "Resume",
+        "contact": "Kontak"
+    },
+    "home": {
+        "name": "Aghna Ghalie Aminudin",
+        "title": "Founder & Marketing Representative",
+        "tagline": "Mengedepankan 'Fokus' dan 'Speed development' sebagai kunci kesuksesan.",
+        "shortStory": "Saya merupakan pribadi yang memiliki prinsip bahwa fokus dan kecepatan perkembangan adalah kunci kesuksesan dalam pengelolaan kegiatan, baik pribadi maupun organisasi. Berpengalaman pada aspek kepemimpinan sejak kecil membuat saya selalu semangat untuk mengembangkan diri agar berdampak positif. Dikenal sebagai pribadi yang berkarakter asertif, solutif, enterprising, dan konvensional, saya berkomitmen untuk mengimplementasikan keterampilan demi kemajuan masyarakat sekitar dan menciptakan integritas bagi bangsa dan negara.",
+        "focusAreas": [
+            {
+                "title": "Kepemimpinan & Organisasi",
+                "description": "Berpengalaman memimpin tim dan organisasi, mulai dari Badan Eksekutif Murid hingga membangun perusahaan, dengan keahlian dalam pengambilan keputusan dan analisis kritis.",
+                "iconName": "Users"
+            },
+            {
+                "title": "Bisnis & Pemasaran",
+                "description": "Memiliki rekam jejak dalam negosiasi, perencanaan strategis, serta keberhasilan menutup kontrak kerja dengan investor dan berbagai institusi besar.",
+                "iconName": "TrendingUp"
+            }
+        ]
+    },
+    "resume": {
+        "title": "Pengalaman",
+        "experiences": [
+            {
+                "id": 1,
+                "position": "Founder",
+                "institution": "Beaulytics",
+                "duration": "Maret 2025 - Present",
+                "description": "Berhasil memimpin tim dalam merancang strategi berjalannya perusahaan yang terbagi menjadi tiga fase (progres fase satu mencapai 50%). Mengamankan kontrak kerja dengan investor sebesar 30% dari rancangan anggaran biaya perkembangan perusahaan."
+            },
+            {
+                "id": 2,
+                "position": "Marketing Representatif",
+                "institution": "CV Mitra Saraa Media",
+                "duration": "September 2022 - Present",
+                "description": "Mewakili perusahaan dalam mempromosikan dan menjual produk/layanan di bidang Garment Specialist. Berhasil menutup kontrak kerja dengan beberapa institusi, termasuk pengerjaan almamater untuk UIN Sultan Syarif Kasim Riau."
+            },
+            {
+                "id": 3,
+                "position": "Presiden / Ketua",
+                "institution": "Badan Eksekutif Murid / OSIS",
+                "duration": "September 2023 - September 2024",
+                "description": "Memimpin 68 anggota BEM/OSIS dalam menjalankan program kerja yang berhasil meningkatkan keterlibatan siswa hingga lebih dari 55%. Mengelola lebih dari 10 program sekolah, termasuk acara tahunan dan pelatihan siswa."
+            },
+            {
+                "id": 4,
+                "position": "Murobbi Halaqah BPI",
+                "institution": "Sekolah Pembinaan SMAIT Assyifa Wanareja",
+                "duration": "September 2024 - Present",
+                "description": "Mendampingi mutarabbi dalam memahami nilai-nilai Islami dan membangun karakter. Aktif dalam dakwah Islamiyah bulanan kepada masyarakat sekitar melalui berbagai aktivitas keagamaan."
+            }
+        ]
+    },
+    "contact": {
+        "title": "Hubungi Saya",
+        "email": "E-mail",
+        "whatsapp": "WhatsApp",
+        "linkedin": "LinkedIn",
+        "message": "Mari terhubung dan berkolaborasi!"
+    }
+}

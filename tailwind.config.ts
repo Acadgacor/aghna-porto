@@ -12,13 +12,11 @@ const config: Config = {
                 navy: "#0A192F",
                 cream: "#F5F5DC",
                 gold: "#D4AF37",
+                background: "var(--background)",
+                foreground: "var(--foreground)",
             },
             fontFamily: {
                 serif: ["var(--font-cormorant-garamond)", "serif"],
-            },
-            colors: {
-                background: "var(--background)",
-                foreground: "var(--foreground)",
             },
         },
     },
