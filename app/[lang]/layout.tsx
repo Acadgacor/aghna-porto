@@ -28,6 +28,7 @@ export default async function RootLayout({
     <html
       lang={resolvedParams.lang}
       className={`${cormorantGaramond.variable} h-full antialiased`}
+      data-scroll-behavior="smooth"
     >
       <body className="min-h-full flex flex-col font-serif bg-cream text-navy">
         <Navbar />
