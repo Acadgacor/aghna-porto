@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { Mail, ArrowUpRight } from "lucide-react";
@@ -33,6 +34,12 @@ const itemVariants: Variants = {
 export default function ClientContact({ dict }: { dict: any }) {
     const contactDict = dict.contact;
     const isIndo = contactDict.title === "Hubungi Saya";
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+    }, []);
 
     const whatsappMessage = isIndo
         ? "Halo Aghna, saya ingin berdiskusi lebih lanjut mengenai..."
@@ -90,12 +97,16 @@ export default function ClientContact({ dict }: { dict: any }) {
                     animate="visible"
                     className="space-y-1"
                 >
-                    {socialLinks.map((social, index) => {
+                    {socialLinks.map((social) => {
                         let finalUrl = social.url;
                         if (social.platform === "WhatsApp") {
-                            finalUrl = `${social.url}?text=${encodedWhatsAppMessage}`;
+                            finalUrl = isMobile
+                                ? `whatsapp://send?phone=6281319244558&text=${encodedWhatsAppMessage}`
+                                : `${social.url}?text=${encodedWhatsAppMessage}`;
                         } else if (social.platform === "Email") {
-                            finalUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=aghnaghalie@gmail.com`;
+                            finalUrl = isMobile
+                                ? `mailto:aghnaghalie@gmail.com?subject=Inquiry&body=${encodedWhatsAppMessage}`
+                                : `https://mail.google.com/mail/?view=cm&fs=1&to=aghnaghalie@gmail.com`;
                         }
                         return (
                             <motion.div key={social.platform} variants={itemVariants}>
@@ -127,16 +138,6 @@ export default function ClientContact({ dict }: { dict: any }) {
                         );
                     })}
                 </motion.div>
-
-                {/* Footer note */}
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.8 }}
-                    className="mt-12 text-xs text-navy/30 font-light"
-                >
-                    Typically responds within 24 hours.
-                </motion.p>
             </div>
         </div>
     );
