@@ -8,6 +8,7 @@ import { fadeUp, staggerContainer } from "@/lib/animations";
 
 export function HeroSection({ dict, isIndo }: { dict: any; isIndo: boolean }) {
     const navDict = dict.navigation;
+    const homeDict = dict.home;
 
     return (
         <section id="home" className="relative min-h-[calc(100vh-72px)] flex items-center overflow-hidden">
@@ -40,7 +41,7 @@ export function HeroSection({ dict, isIndo }: { dict: any; isIndo: boolean }) {
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-60" />
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-gold" />
                             </span>
-                            Law Undergraduate &amp; Founder of Beaulytics
+                            {homeDict.badge}
                         </motion.div>
 
                         {/* Headline */}
@@ -56,7 +57,7 @@ export function HeroSection({ dict, isIndo }: { dict: any; isIndo: boolean }) {
 
                         {/* Skill Pills */}
                         <motion.div variants={fadeUp} className="flex flex-wrap gap-2">
-                            {["Legal Expert", "Business Strategy", "Innovation"].map((pill) => (
+                            {homeDict.skillPills.map((pill: string) => (
                                 <span
                                     key={pill}
                                     className="px-4 py-1.5 rounded-full border border-navy/12 bg-white/50 text-navy/70 text-xs font-semibold backdrop-blur-sm shadow-sm hover:border-gold/40 hover:text-navy hover:bg-white/80 transition-all duration-300 cursor-default"
@@ -71,7 +72,7 @@ export function HeroSection({ dict, isIndo }: { dict: any; isIndo: boolean }) {
                             variants={fadeUp}
                             className="text-base sm:text-lg text-navy/60 leading-relaxed max-w-[480px]"
                         >
-                            {personalInfo.tagline}
+                            {homeDict.tagline}
                         </motion.p>
 
                         {/* CTA Buttons */}

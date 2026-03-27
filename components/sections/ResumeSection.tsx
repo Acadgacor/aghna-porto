@@ -35,10 +35,10 @@ export function ResumeSection({ dict }: { dict: any }) {
                         className="text-[10px] tracking-[0.35em] uppercase font-semibold mb-4"
                         style={{ color: "var(--color-gold)" }}
                     >
-                        Curriculum Vitae
+                        {resumeDict.eyebrow}
                     </motion.p>
                     <h2 className="text-4xl sm:text-5xl font-serif font-semibold leading-tight mb-6" style={{ color: "var(--color-navy)" }}>
-                        Professional
+                        {resumeDict.headingLine1}
                         <br />
                         <span className="gradient-text">{resumeDict.title}</span>
                     </h2>
@@ -54,7 +54,7 @@ export function ResumeSection({ dict }: { dict: any }) {
 
                 {/* Timeline */}
                 <div ref={resumeRef} className="relative pl-8">
-                    <TimelineLine />
+                    <TimelineLine targetRef={resumeRef} />
                     <motion.div
                         variants={staggerContainer}
                         initial="hidden"

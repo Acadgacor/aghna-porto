@@ -9,6 +9,7 @@ import { TiltCard } from "@/components/ui/TiltCard";
 export function AboutSection({ dict, isIndo }: { dict: any; isIndo: boolean }) {
     const aboutRef = useRef<HTMLDivElement>(null);
     const isAboutInView = useInView(aboutRef, { once: true, margin: "-100px" });
+    const aboutDict = dict.about;
 
     return (
         <section
@@ -31,18 +32,18 @@ export function AboutSection({ dict, isIndo }: { dict: any; isIndo: boolean }) {
                     variants={fadeUp}
                     className="text-xs tracking-[0.3em] uppercase text-gold font-semibold mb-4 text-center"
                 >
-                    {isIndo ? "Tentang Saya" : "About Me"}
+                    {aboutDict.eyebrow}
                 </motion.p>
 
                 <motion.h2
                     variants={fadeUp}
                     className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy text-center mb-6 leading-[1.1]"
                 >
-                    {isIndo ? "Siapa" : "Who"}{" "}
+                    {aboutDict.headingWho}{" "}
                     <span className="gradient-text italic font-serif">
-                        {isIndo ? "Aghna" : "I Am"}
+                        {aboutDict.headingIAm}
                     </span>
-                    {isIndo ? " itu?" : "?"}
+                    {aboutDict.headingSuffix}
                 </motion.h2>
 
                 <motion.div variants={fadeUp} className="divider-gold w-24 mx-auto mb-10" />
@@ -51,12 +52,12 @@ export function AboutSection({ dict, isIndo }: { dict: any; isIndo: boolean }) {
                     variants={fadeUp}
                     className="text-navy/65 text-center max-w-3xl mx-auto text-base md:text-lg leading-relaxed mb-20"
                 >
-                    {personalInfo.shortDescription}
+                    {aboutDict.shortDescription}
                 </motion.p>
 
                 {/* Focus Area Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-                    {personalInfo.focusAreas.map((area, index) => (
+                    {aboutDict.focusAreas.map((area: any, index: number) => (
                         <motion.div key={index} variants={fadeUp}>
                             <TiltCard className="h-full">
                                 <div className="group relative glass-card p-8 rounded-2xl flex flex-col items-start h-full hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md cursor-default overflow-hidden">

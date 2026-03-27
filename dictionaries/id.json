@@ -7,8 +7,10 @@
     "home": {
         "name": "Aghna Ghalie Aminudin",
         "title": "Founder & Marketing Representative",
+        "badge": "Mahasiswa Hukum & Pendiri Beaulytics",
         "tagline": "Mengedepankan 'Fokus' dan 'Speed development' sebagai kunci kesuksesan.",
         "shortStory": "Saya merupakan pribadi yang memiliki prinsip bahwa fokus dan kecepatan perkembangan adalah kunci kesuksesan dalam pengelolaan kegiatan, baik pribadi maupun organisasi. Berpengalaman pada aspek kepemimpinan sejak kecil membuat saya selalu semangat untuk mengembangkan diri agar berdampak positif. Dikenal sebagai pribadi yang berkarakter asertif, solutif, enterprising, dan konvensional, saya berkomitmen untuk mengimplementasikan keterampilan demi kemajuan masyarakat sekitar dan menciptakan integritas bagi bangsa dan negara.",
+        "skillPills": ["Ahli Hukum", "Strategi Bisnis", "Inovasi"],
         "focusAreas": [
             {
                 "title": "Kepemimpinan & Organisasi",
@@ -22,21 +24,43 @@
             }
         ]
     },
+    "about": {
+        "eyebrow": "Tentang Saya",
+        "headingWho": "Siapa",
+        "headingIAm": "Aghna",
+        "headingSuffix": " itu?",
+        "shortDescription": "Sebagai mahasiswa hukum di Universitas Brawijaya dan pendiri Beaulytics, saya beroperasi di persimpangan unik antara kerangka hukum dan inovasi berbasis data. Latar belakang akademik saya membekali kemampuan menavigasi lanskap regulasi yang kompleks, sementara pengalaman kewirausahaan mendorong saya membangun solusi bisnis yang skalabel dan berbasis teknologi. Saya sangat bersemangat memanfaatkan wawasan analitik untuk merumuskan pertumbuhan strategis dan memastikan fondasi hukum yang kuat bagi usaha yang berkembang.",
+        "focusAreas": [
+            {
+                "title": "Mahasiswa Hukum, Universitas Brawijaya",
+                "description": "Mendalami teori dan praktik hukum untuk menavigasi lanskap regulasi yang kompleks dan memastikan fondasi hukum yang kokoh.",
+                "number": "1"
+            },
+            {
+                "title": "Pendiri, Beaulytics",
+                "description": "Membangun bisnis berbasis data yang berfokus pada pertumbuhan strategis dan menyediakan wawasan analitik untuk masalah modern.",
+                "number": "2"
+            }
+        ]
+    },
     "resume": {
+        "eyebrow": "Kurikulum Vitae",
+        "headingLine1": "Rekam Jejak",
         "title": "Pengalaman",
+        "present": "Sekarang",
         "experiences": [
             {
                 "id": 1,
                 "position": "Founder",
                 "institution": "Beaulytics",
-                "duration": "Maret 2025 - Present",
+                "duration": "Maret 2025 - Sekarang",
                 "description": "Berhasil memimpin tim dalam merancang strategi berjalannya perusahaan yang terbagi menjadi tiga fase (progres fase satu mencapai 50%). Mengamankan kontrak kerja dengan investor sebesar 30% dari rancangan anggaran biaya perkembangan perusahaan."
             },
             {
                 "id": 2,
                 "position": "Marketing Representatif",
                 "institution": "CV Mitra Saraa Media",
-                "duration": "September 2022 - Present",
+                "duration": "September 2022 - Sekarang",
                 "description": "Mewakili perusahaan dalam mempromosikan dan menjual produk/layanan di bidang Garment Specialist. Berhasil menutup kontrak kerja dengan beberapa institusi, termasuk pengerjaan almamater untuk UIN Sultan Syarif Kasim Riau."
             },
             {
@@ -50,7 +74,7 @@
                 "id": 4,
                 "position": "Murobbi Halaqah BPI",
                 "institution": "Sekolah Pembinaan SMAIT Assyifa Wanareja",
-                "duration": "September 2024 - Present",
+                "duration": "September 2024 - Sekarang",
                 "description": "Mendampingi mutarabbi dalam memahami nilai-nilai Islami dan membangun karakter. Aktif dalam dakwah Islamiyah bulanan kepada masyarakat sekitar melalui berbagai aktivitas keagamaan."
             }
         ]

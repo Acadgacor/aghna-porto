@@ -7,8 +7,10 @@
     "home": {
         "name": "Aghna Ghalie Aminudin",
         "title": "Founder & Marketing Representative",
+        "badge": "Law Undergraduate & Founder of Beaulytics",
         "tagline": "Prioritizing 'Focus' and 'Speed development' as the keys to success.",
         "shortStory": "I am an individual who holds the principle that focus and speed of development are the keys to success in managing activities, both personal and organizational. Experienced in leadership aspects since childhood makes me always enthusiastic to develop myself to have a positive impact. Known as a person with an assertive, solution-oriented, enterprising, and conventional character, I am committed to implementing skills for the progress of the surrounding community and creating integrity for the nation and state.",
+        "skillPills": ["Legal Expert", "Business Strategy", "Innovation"],
         "focusAreas": [
             {
                 "title": "Leadership & Organization",
@@ -22,8 +24,30 @@
             }
         ]
     },
+    "about": {
+        "eyebrow": "About Me",
+        "headingWho": "Who",
+        "headingIAm": "I Am",
+        "headingSuffix": "?",
+        "shortDescription": "As a law undergraduate at Universitas Brawijaya and the founder of Beaulytics, I operate at the unique intersection of legal frameworks and data-driven innovation. My academic background equips me to navigate complex regulatory landscapes, while my entrepreneurial experience drives me to build scalable, tech-forward business solutions. I am deeply passionate about leveraging analytical insights to formulate strategic growth and ensuring robust legal foundations for emerging ventures.",
+        "focusAreas": [
+            {
+                "title": "Law Undergraduate, Universitas Brawijaya",
+                "description": "Deepening legal theory and practice to navigate complex regulatory landscapes and ensure firm legal foundations.",
+                "number": "1"
+            },
+            {
+                "title": "Founder, Beaulytics",
+                "description": "Building a data-driven business focusing on strategic growth and providing analytical insights for modern problems.",
+                "number": "2"
+            }
+        ]
+    },
     "resume": {
+        "eyebrow": "Curriculum Vitae",
+        "headingLine1": "Professional",
         "title": "Experience",
+        "present": "Present",
         "experiences": [
             {
                 "id": 1,
