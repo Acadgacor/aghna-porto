@@ -66,7 +66,7 @@ export const socialLinks = [
     },
     {
         platform: "LinkedIn",
-        url: "https://www.linkedin.com/in/placeholder", // Ganti dengan URL asli jika ada
+        url: "https://www.linkedin.com/in/aghna-aminudin-39a826332/?originalSubdomain=id", // Ganti dengan URL asli jika ada
         label: "LinkedIn",
     },
 ];
