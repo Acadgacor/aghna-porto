@@ -1,19 +1,18 @@
 export const personalInfo = {
     name: "Aghna Ghalie Aminudin",
-    title: "Founder & Marketing Representative",
-    tagline: "Mengedepankan 'Fokus' dan 'Speed development' sebagai kunci kesuksesan.",
-    imageUrl: "/portrait-aghna.jpg", // Sesuaikan dengan path foto Anda
-    shortStory: "Saya merupakan pribadi yang memiliki prinsip bahwa fokus dan kecepatan perkembangan adalah kunci kesuksesan dalam pengelolaan kegiatan, baik pribadi maupun organisasi. Berpengalaman pada aspek kepemimpinan sejak kecil membuat saya selalu semangat untuk mengembangkan diri agar berdampak positif. Dikenal sebagai pribadi yang berkarakter asertif, solutif, enterprising, dan konvensional, saya berkomitmen untuk mengimplementasikan keterampilan demi kemajuan masyarakat sekitar dan menciptakan integritas bagi bangsa dan negara.",
+    tagline: "Merging Legal Acumen with Visionary Entrepreneurship.",
+    imageUrl: "/1754991711357.jpg",
+    shortDescription: "As a law undergraduate at Universitas Brawijaya and the founder of Beaulytics, I operate at the unique intersection of legal frameworks and data-driven innovation. My academic background equips me to navigate complex regulatory landscapes, while my entrepreneurial experience drives me to build scalable, tech-forward business solutions. I am deeply passionate about leveraging analytical insights to formulate strategic growth and ensuring robust legal foundations for emerging ventures.",
     focusAreas: [
         {
-            title: "Kepemimpinan & Organisasi",
-            description: "Berpengalaman memimpin tim dan organisasi, mulai dari Badan Eksekutif Murid hingga membangun perusahaan, dengan keahlian dalam pengambilan keputusan dan analisis kritis.",
-            iconName: "Users" // Anda bisa mengubah icon sesuai library yang digunakan (misal: Lucide React)
+            title: "Law Undergraduate, Universitas Brawijaya",
+            description: "Deepening legal theory and practice to navigate complex regulatory landscapes and ensure firm legal foundations.",
+            number: "1"
         },
         {
-            title: "Bisnis & Pemasaran",
-            description: "Memiliki rekam jejak dalam negosiasi, perencanaan strategis, serta keberhasilan menutup kontrak kerja dengan investor dan berbagai institusi besar.",
-            iconName: "TrendingUp"
+            title: "Founder, Beaulytics",
+            description: "Building a data-driven business focusing on strategic growth and providing analytical insights for modern problems.",
+            number: "2"
         }
     ]
 };
@@ -60,13 +59,13 @@ export const socialLinks = [
         label: "Email",
     },
     {
+        platform: "LinkedIn",
+        url: "https://www.linkedin.com/in/aghna-aminudin-39a826332/?originalSubdomain=id",
+        label: "LinkedIn",
+    },
+    {
         platform: "WhatsApp",
         url: "https://wa.me/6281319244558",
         label: "WhatsApp",
-    },
-    {
-        platform: "LinkedIn",
-        url: "https://www.linkedin.com/in/aghna-aminudin-39a826332/?originalSubdomain=id", // Ganti dengan URL asli jika ada
-        label: "LinkedIn",
-    },
+    }
 ];

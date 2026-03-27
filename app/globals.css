@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
+/* ─── CSS Variables ─────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F5F5DC;
+  --foreground: #0A192F;
+  --color-navy:  #0A192F;
+  --color-cream: #F5F5DC;
+  --color-gold:  #D4AF37;
+  --color-gold-light: #F0D060;
 }
 
 @theme inline {
@@ -14,13 +19,187 @@
   --color-gold: #D4AF37;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Base ───────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-cormorant-garamond), "Georgia", serif;
+  background-color: var(--color-cream);
+  color: var(--color-navy);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.25);
+  color: var(--color-navy);
+}
+
+/* ─── Custom Scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(10, 25, 47, 0.25);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* ─── Keyframe Animations ────────────────────────────────────── */
+
+/* Shimmer sweep */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* Floating bob */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-18px) rotate(1deg); }
+  66%       { transform: translateY(-10px) rotate(-1deg); }
+}
+
+/* Floating — slower variant */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50%       { transform: translateY(-26px) scale(1.02); }
+}
+
+/* Gradient shift for hero orbs */
+@keyframes gradientShift {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50%       { opacity: 0.55; transform: scale(1.15); }
+}
+
+/* Glowing pulse for portrait border */
+@keyframes borderGlow {
+  0%, 100% { box-shadow: 0 0 20px 3px rgba(212,175,55,0.25); }
+  50%       { box-shadow: 0 0 40px 8px rgba(212,175,55,0.45); }
+}
+
+/* Rotating conic gradient border */
+@keyframes rotateBorder {
+  from { --border-angle: 0deg; }
+  to   { --border-angle: 360deg; }
+}
+
+/* Slide-up reveal */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Draw line */
+@keyframes drawLine {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* Fade in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Number count-up pulse */
+@keyframes countPulse {
+  0%,100% { transform: scale(1); }
+  50%     { transform: scale(1.04); }
+}
+
+/* ─── Utility Classes ────────────────────────────────────────── */
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Gold shimmer on text */
+.shimmer-text {
+  background: linear-gradient(90deg, var(--color-navy) 40%, var(--color-gold) 50%, var(--color-navy) 60%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Orb blobs */
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+  filter: blur(80px);
+  animation: gradientShift 6s ease-in-out infinite;
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(245, 245, 220, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+/* Glow button */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.btn-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(212,175,55,0.35) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.btn-glow:hover::after {
+  opacity: 1;
+}
+
+/* Animated underline link */
+.nav-link-hover {
+  position: relative;
+}
+.nav-link-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--color-gold);
+  transition: width 0.3s ease;
+}
+.nav-link-hover:hover::after {
+  width: 100%;
+}
+
+/* Section divider */
+.divider-gold {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+}
+
+/* Card 3D tilt */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease;
 }
