@@ -1,44 +1,73 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
+import { useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-// NavLinks baseline URLs
+/* ── Section hash links ──────────────────────────────────────── */
 const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Resume", href: "/resume" },
-    { name: "Contact", href: "/contact" },
+    { name: "Home",    hash: "#home"    },
+    { name: "Resume",  hash: "#resume"  },
+    { name: "Contact", hash: "#contact" },
 ];
 
+const SECTION_IDS = ["home", "about", "resume", "contact"] as const;
+
+/* ── Smooth scroll helper ────────────────────────────────────── */
+function scrollToHash(hash: string, onDone?: () => void) {
+    const id = hash.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+        onDone?.();
+    }
+}
+
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
+    const [isOpen,     setIsOpen]     = useState(false);
+    const [scrolled,   setScrolled]   = useState(false);
+    const [activeHash, setActiveHash] = useState<string>("#home");
 
     const pathname = usePathname();
-    const router = useRouter();
+    const router   = useRouter();
 
     const currentLocale = pathname?.split("/")[1] || "id";
 
-    // Scroll listener
+    /* ── Scroll listener ─────────────────────────────────────── */
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
         window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Close mobile menu on route change
+    /* ── Close mobile menu on route change ───────────────────── */
+    useEffect(() => { setIsOpen(false); }, [pathname]);
+
+    /* ── Intersection Observer — active section tracking ──────── */
     useEffect(() => {
-        setIsOpen(false);
-    }, [pathname]);
+        const observers: IntersectionObserver[] = [];
 
-    const getLocalizedHref = (baseHref: string) => {
-        if (baseHref === "/") return `/${currentLocale}`;
-        return `/${currentLocale}${baseHref}`;
-    };
+        SECTION_IDS.forEach((id) => {
+            const el = document.getElementById(id);
+            if (!el) return;
 
+            const obs = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        setActiveHash(`#${id}`);
+                    }
+                },
+                { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+            );
+            obs.observe(el);
+            observers.push(obs);
+        });
+
+        return () => observers.forEach((o) => o.disconnect());
+    }, []);
+
+    /* ── Language switch ─────────────────────────────────────── */
     const switchLanguage = (newLocale: string) => {
         if (currentLocale === newLocale) return;
         const pathSegments = pathname.split("/");
@@ -47,16 +76,18 @@ export default function Navbar() {
         router.push(newUrl);
     };
 
-    const getLabel = (link: { name: string; href: string }) => {
-        if (link.name === "Contact") return currentLocale === "id" ? "Kontak" : "Contact";
-        if (link.name === "Home") return currentLocale === "id" ? "Beranda" : "Home";
+    /* ── Label helpers ───────────────────────────────────────── */
+    const getLabel = (link: { name: string }) => {
+        if (link.name === "Contact") return currentLocale === "id" ? "Kontak"  : "Contact";
+        if (link.name === "Home")    return currentLocale === "id" ? "Beranda" : "Home";
         return link.name;
     };
 
-    const isActive = (href: string) => {
-        const localizedHref = getLocalizedHref(href);
-        if (href === "/") return pathname === localizedHref;
-        return pathname.startsWith(localizedHref);
+    /* ── Active check — compare against tracked hash ─────────── */
+    const isActive = (hash: string) => {
+        // "about" section scrolling maps to "home" nav item
+        if (hash === "#home" && (activeHash === "#home" || activeHash === "#about")) return true;
+        return activeHash === hash;
     };
 
     return (
@@ -77,9 +108,9 @@ export default function Navbar() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
                         >
-                            <Link
-                                href={`/${currentLocale}`}
-                                className="group relative font-serif text-xl font-bold text-navy tracking-wide"
+                            <button
+                                onClick={() => scrollToHash("#home")}
+                                className="group relative font-serif text-xl font-bold text-navy tracking-wide bg-transparent border-0 p-0 cursor-pointer"
                             >
                                 <span className="relative inline-block">
                                     Aghna
@@ -88,9 +119,8 @@ export default function Navbar() {
                                     <span className="text-gold">.</span>
                                     Aminudin
                                 </span>
-                                {/* shimmer underline on hover */}
                                 <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-gradient-to-r from-gold via-gold/50 to-transparent group-hover:w-full transition-all duration-500 ease-out" />
-                            </Link>
+                            </button>
                         </motion.div>
 
                         {/* Right: Desktop Nav + Lang Switcher + Hamburger */}
@@ -103,24 +133,24 @@ export default function Navbar() {
                             {/* Desktop Nav */}
                             <nav className="hidden md:flex items-center gap-1">
                                 {navLinks.map((link) => (
-                                    <Link
+                                    <button
                                         key={link.name}
-                                        href={getLocalizedHref(link.href)}
-                                        className={`relative px-3 py-2 font-serif text-[15px] tracking-wide transition-colors duration-300 nav-link-hover ${
-                                            isActive(link.href)
+                                        onClick={() => scrollToHash(link.hash)}
+                                        className={`relative px-3 py-2 font-serif text-[15px] tracking-wide transition-colors duration-300 nav-link-hover bg-transparent border-0 cursor-pointer ${
+                                            isActive(link.hash)
                                                 ? "text-navy font-semibold"
                                                 : "text-navy/65 hover:text-navy"
                                         }`}
                                     >
                                         {getLabel(link)}
-                                        {isActive(link.href) && (
+                                        {isActive(link.hash) && (
                                             <motion.div
                                                 layoutId="nav-indicator"
                                                 className="absolute -bottom-0.5 left-3 right-3 h-[1.5px] bg-gold"
                                                 transition={{ type: "spring", stiffness: 400, damping: 35 }}
                                             />
                                         )}
-                                    </Link>
+                                    </button>
                                 ))}
                             </nav>
 
@@ -217,20 +247,19 @@ export default function Navbar() {
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: i * 0.07, duration: 0.3 }}
                                     >
-                                        <Link
-                                            href={getLocalizedHref(link.href)}
-                                            onClick={() => setIsOpen(false)}
-                                            className={`flex items-center gap-3 px-4 py-3.5 rounded-xl font-serif text-lg transition-all duration-200 ${
-                                                isActive(link.href)
+                                        <button
+                                            onClick={() => scrollToHash(link.hash, () => setIsOpen(false))}
+                                            className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-xl font-serif text-lg transition-all duration-200 bg-transparent border-0 cursor-pointer text-left ${
+                                                isActive(link.hash)
                                                     ? "bg-navy text-cream font-semibold"
                                                     : "text-navy/75 hover:bg-navy/6 hover:text-navy"
                                             }`}
                                         >
-                                            {isActive(link.href) && (
+                                            {isActive(link.hash) && (
                                                 <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
                                             )}
                                             {getLabel(link)}
-                                        </Link>
+                                        </button>
                                     </motion.div>
                                 ))}
                             </nav>
